@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Portafolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5f2ee;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: static;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      height: auto; /* ✅ Permite que el header tome solo el alto del contenido */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+    }
+
+    .logo {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+      position: static;
+      z-index: 1001;
+    }
+
+    main {
+      margin-top: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img:not(.logo) {
+      width: 80%;
+      max-width: 800px;
+      margin: 50px 0;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    img.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background-color: #f5f2ee;
+      color: #a01515 !important;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        height: 100px;
+      }
+
+      img:not(.logo) {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Header.png" alt="Portfolio" class="logo">
+  </header>
+
+  <main id="trabajos">
+    <img src="Foto_1.jpg" alt="Imagen 1">
+    <img src="Foto_2.jpg" alt="Imagen 2">
+    <img src="Foto_3.jpg" alt="Imagen 3">
+    <img src="Foto_4.jpg" alt="Imagen 4">
+    <img src="Foto_5.jpg" alt="Imagen 5">
+    <img src="Foto_6.jpg" alt="Imagen 6">
+    <img src="Foto_7.jpg" alt="Imagen 7">
+    <img src="Foto_8.jpg" alt="Imagen 8">
+    <img src="Foto_9.jpg" alt="Imagen 9">
+    <img src="Foto_10.jpg" alt="Imagen 10">
+    <img src="Foto_11.jpg" alt="Imagen 11">
+    <img src="Foto_12.jpg" alt="Imagen 12">
+    <img src="Foto_13.jpg" alt="Imagen 13">
+    <img src="Foto_14.jpg" alt="Imagen 14">
+    <img src="Foto_15.jpg" alt="Imagen 15">
+    <img src="Foto_16.jpg" alt="Imagen 16">
+    <img src="Foto_17.jpg" alt="Imagen 17">
+    <img src="Foto_18.jpg" alt="Imagen 18">
+    <img src="Foto_19.jpg" alt="Imagen 19">
+    <img src="Foto_20.jpg" alt="Imagen 20">
+    <img src="Foto_21.jpg" alt="Imagen 21">
+    <img src="Foto_22.jpg" alt="Imagen 22">
+    <img src="Foto_23.jpg" alt="Imagen 23">
+    <img src="Foto_24.jpg" alt="Imagen 24">
+    <img src="Foto_25.jpg" alt="Imagen 25">
+    <img src="Foto_26.jpg" alt="Imagen 26">
+    <img src="Foto_27.jpg" alt="Imagen 27">
+    <img src="Foto_28.jpg" alt="Imagen 28">
+    <img src="Foto_29.jpg" alt="Imagen 29">
+    <img src="Foto_30.jpg" alt="Imagen 30">
+    <img src="Foto_31.jpg" alt="Imagen 31">
+    <img src="Foto_32.jpg" alt="Imagen 32">
+    <img src="Foto_33.jpg" alt="Imagen 33">
+    <img src="Foto_34.jpg" alt="Imagen 34">
+    <img src="Foto_35.jpg" alt="Imagen 35">
+    <img src="Foto_36.jpg" alt="Imagen 36">
+    <img src="Foto_37.jpg" alt="Imagen 37">
+    <img src="Foto_38.jpg" alt="Imagen 38">
+    <img src="Foto_39.jpg" alt="Imagen 39">
+    <img src="Foto_40.jpg" alt="Imagen 40">
+    <img src="Foto_41.jpg" alt="Imagen 41">
+    <img src="Foto_42.jpg" alt="Imagen 43">
+    <img src="Foto_43.jpg" alt="Imagen 43">
+  </main>
+
+  <footer id="contacto">
+    <p>© 2025 Mariana Espinosa Todos los derechos reservados.</p>
+    <p>Contacto: marianaespinosasibaja@gmail.com</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('main img');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    images.forEach(img => {
+      observer.observe(img);
+    });
+  </script>
+
+</body>
+</html>
